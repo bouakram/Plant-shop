@@ -369,17 +369,15 @@ header .container .bottom nav .change-ifo{
 /* responsive of the landing section */
 @media(max-width:768px){
     .landing .container .parallax{
-        height : 70vh;
-        padding: 25%;
+        padding-top: 30%;
     }
     .landing .container .parallax h1{
-        font-size: 35px;
+        font-size: 30px;
     }
 }
 @media (max-width: 425px) {
     .landing .container .parallax{
-        height: 40vh;
-        padding: 25%;
+        padding-top: 40%;
     }
     .landing .container .parallax p {
         font-size: 14px;
@@ -405,7 +403,6 @@ header .container .bottom nav .change-ifo{
 
 @media (max-width: 380px){
     .landing .container .parallax {
-        height: 50vh;
         padding-top: 60%;
     }
     .landing .container .parallax p {
@@ -622,6 +619,19 @@ header .container .bottom nav .change-ifo{
     transition: 0.2s linear;
     cursor: pointer;
 }
+/* request responsive section */
+
+@media(max-width: 426px){
+    .request .container .parallax-two .the-form {
+        padding: 0;
+        font-size: 10px;
+        letter-spacing: 4px;
+    }
+    .request .container .parallax-two .the-form form input:last-child {
+        height: 60px;
+    }
+}
+
 /* end of request section */
 .footer .container{
     background-color: var(--secoundary-color);
