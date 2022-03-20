@@ -404,6 +404,7 @@ header .container .bottom nav .change-ifo{
 
 @media (max-width: 380px){
     .landing .container .parallax {
+        height: 100vh;
         padding-top: 60%;
     }
     .landing .container .parallax p {
