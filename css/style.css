@@ -369,6 +369,7 @@ header .container .bottom nav .change-ifo{
 /* responsive of the landing section */
 @media(max-width:768px){
     .landing .container .parallax{
+        height: 100vh;
         padding-top: 30%;
     }
     .landing .container .parallax h1{

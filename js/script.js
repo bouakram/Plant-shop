@@ -70,11 +70,11 @@ anchor.forEach(function(e){
 
 // shop section
 window.onscroll = function (){
-    if(window.scrollY >= shop.offsetTop - 300){
+    if(window.scrollY >= shop.offsetTop - 400){
         product.forEach(e => e.classList.add("active"))
-        if(window.scrollY >= aboutImg.offsetTop - 300){
+        if(window.scrollY >= aboutImg.offsetTop - 400){
             aboutImg.classList.add("active")
-            if(window.scrollY >= aboutImgSecound.offsetTop - 300){
+            if(window.scrollY >= aboutImgSecound.offsetTop - 400){
                 aboutImgSecound.classList.add("active")
             }    
         }    
