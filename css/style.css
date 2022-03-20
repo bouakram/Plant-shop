@@ -1,0 +1,703 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Assistant', sans-serif;
+    background-color: #eee;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+:root{
+    --main-color:#a44a3f;
+    --secoundary-color:rgb(18,49,50);
+    --optional-color:#f19c79;
+    --secondary-optional-color:#354f52;
+}
+
+ul {
+    list-style: none;
+}
+ul li{
+    padding: 0 10px;
+}
+a{
+    text-decoration: none;
+    color: var(--main-color);
+}
+/* header */
+
+/* the top section */
+header {
+    background-color: #eee;
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+
+header .container .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .container .top i{
+    color: var(--main-color);
+    padding: 0 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* searsh section */
+header .container .top .searsh{
+    padding: 5px;
+    color: var(--main-color);
+}
+
+header .container .top .searsh input{
+    border: none;
+    padding: 5px;
+    width: calc(80% - 20px);
+    background-color: #eee;
+}
+
+header .container .top .searsh input[placeholder="Searsh..."]{
+    color: var(--main-color);
+}
+
+header .container .top .searsh input:focus{
+    outline: none;
+}
+
+header .container .top .searsh:hover{
+    border: 1px solid var(--main-color);
+}
+
+header .container .top .searsh.active{
+    border: 1px solid var(--main-color);
+}
+
+/* log section */
+
+header .container .top .log .effect:hover a{
+    opacity: 0.7;
+}
+
+header .container .top .log a{
+    font-size: 10px;
+}
+
+/* the my list section */
+
+.section-one{
+    position: fixed;
+    height: 100vh;
+    width: 50%;
+    top: 0;
+    right: -100%;
+    border-left: 0.3px solid var(--main-color);
+    background: white;
+    color: var(--main-color);
+    transition: 0.3s linear;
+}
+.section-one.active{
+    right: 0;
+    transition: 0.5s linear;
+}
+
+.section-one .my-list .top{
+    margin-bottom: 100px;
+}
+
+.section-one .my-list .top i{
+    color: var(--main-color);
+    position: relative;
+    top: 4rem;
+    left: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.section-one .my-list .top i.active{
+    transition: 0.3s 0.2s ease-in-out;
+    transform: rotate(180deg);
+}
+
+.section-one .my-list .top p{
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.section-one .my-list h3{
+    text-align: center;
+}
+/* the end of top section */
+
+/* the buttom section  */
+
+header .container .bottom nav{
+    position: relative;
+    max-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: baseline;
+}
+
+header .container .bottom nav .navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+header .container .bottom nav .navigation h2{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+header .container .bottom nav .navigation h2 a:hover{
+    color: var(--secoundary-color);
+    opacity: 0.7;
+}
+
+header .container .bottom nav .navigation ul{
+    display: flex;
+    list-style: none;
+    margin: 0 0 0 25px;
+}
+
+header .container .bottom nav .navigation ul li a:hover{
+    color: var(--secoundary-color);
+    opacity: 0.7;
+}
+
+header .container .bottom nav .burger-btn{
+    display: none;
+    cursor: pointer;
+}
+
+header .container .bottom nav .burger-btn .bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--main-color);
+}
+
+header .container .bottom nav .change-ifo{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--main-color);
+    letter-spacing: 3px;
+}
+
+/* the responsive section */
+@media(max-width : 768px){
+    .section-one{
+        width: 100%;
+        }
+    /* .section-one.active-a{
+        right: 0;
+    } */
+    header .container .bottom nav .change-ifo{
+        display: none;
+    }
+    header .container .bottom nav .navigation ul{
+        position: absolute;
+        left: -120%;
+        bottom: -84px;
+        gap: 0;
+        flex-direction: column;
+        color: var(--optional-color);
+        background-color: var(--optional-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s linear;
+    }
+    header .container .bottom nav .navigation ul.active{
+        left: -25px;
+    }
+    header .container .bottom nav .burger-btn{
+        display: block;
+    }
+    header .container .bottom nav .burger-btn.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    header .container .bottom nav .burger-btn.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    header .container .bottom nav .burger-btn.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* the end of buttom section  */
+
+/* end header */
+/* ------------------------------------------- */
+
+/* start landing */
+.landing .container .parallax{
+    background: url('/images/plants.png') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 80vh;
+
+    text-align: center;
+    padding: 10%;
+    letter-spacing: 3px;
+}
+
+.landing .container .parallax p{
+    font-size: 30px;
+    color: white;
+    padding: 25px;
+}
+
+.landing .container .parallax p span{
+    border-bottom: 1px white solid;
+}
+
+.landing .container .parallax p i {
+    padding: 0 5px;
+    font-size : 50px;
+}
+
+.landing .container .parallax h1{
+    font-size: 100px;
+    color: white;
+    font-weight: 600;
+    padding: 25px;
+}
+
+.landing .container .parallax button{
+    padding: 8px 55px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+}
+.landing .container .parallax button:hover{
+    background-color: var(--optional-color);
+    color: var(--main-color);
+    transition: 0.2s linear;
+    cursor: pointer;
+}
+
+/* shop section */
+.landing .container .shop{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.landing .container .shop .product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-direction: column;
+    margin: 20px auto;
+    background-color: white;
+}
+
+.landing .container .shop .product p{
+    font-size: 40px;
+    color: var(--main-color);
+    /* position: relative; */
+}
+
+/* .landing .container .shop .product p.first-p::after{
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 20px;
+    height: 5px;
+    bottom: -20px;
+    left: 50%;
+    border-radius: 40px;
+    transform: translateX(-50%);
+}
+.landing .container .shop .product p.secound-p::after{
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 20px;
+    height: 5px;
+    bottom: -20px;
+    left: 50%;
+    border-radius: 40px;
+    transform: translateX(-50%);
+}
+.landing .container .shop .product p.third-p::after{
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 20px;
+    height: 5px;
+    bottom: -20px;
+    left: 50%;
+    border-radius: 40px;
+    transform: translateX(-50%);
+} */
+
+.landing .container .shop .product button{
+    border: none;
+    padding: 10px 50px;
+    color: white;
+    background-color: var(--main-color);
+}
+
+.landing .container .shop .product button:hover{
+    background-color: var(--optional-color);
+    color: var(--main-color);
+    transition: 0.2s linear;
+    cursor: pointer;
+}
+
+.landing .container .shop .product img{
+    width: 500px;
+    height: 450px;
+    max-width: 100%;
+}
+/* responsive of the landing section */
+@media(max-width:768px){
+    .landing .container .parallax{
+        height : 70vh;
+        padding: 25%;
+    }
+    .landing .container .parallax h1{
+        font-size: 35px;
+    }
+}
+@media (max-width: 425px) {
+    .landing .container .parallax{
+        height: 40vh;
+        padding: 25%;
+    }
+    .landing .container .parallax p {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .landing .container .parallax h1 {
+        font-size: 14px;
+    }
+    .landing .container .shop .product {
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+    }
+    .landing .container .shop .product.active{
+        opacity: 1;
+    }
+    .landing .container .shop .product img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 380px){
+    .landing .container .parallax {
+        height: 30vh;
+        padding: 33%;
+    }
+    .landing .container .parallax p {
+        font-size: 6px;
+        padding: 0px;
+    }
+    .landing .container .parallax p i {
+        padding: 0 5px;
+        font-size: 20px;
+    }
+    .landing .container .parallax h1 {
+        font-size: 13px;
+        padding: 15px;
+    }
+    .landing .container .parallax button {
+        padding: 2px 34px;
+        margin-top: 15px;
+    }
+}
+/* end landing */
+
+/* about us */
+.about .container .about-sect-one{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%,1fr));
+}
+
+.about .container .about-sect-one .about-text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    color: var(--main-color);
+    background-color: white;
+}
+
+.about .container .about-sect-one .about-text h5{
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 10px;
+}
+
+.about .container .about-sect-one .about-text p{
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 10px;
+    padding: 0 70px;
+}
+
+.about .container .about-sect-one .about-img{
+    display: flex;
+}
+
+.about .container .about-sect-one .about-img img{
+    width: 50%;
+    max-width: 100%;
+    height: 500px;
+}
+
+/* start of section two of about us */
+
+.about .container .about-sec-two{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%,1fr));
+}
+.about .container .about-sec-two .image img{
+    width: 100%;
+    max-width: 100%;
+    height: 700px;
+    max-height: 100%;
+}
+
+.about .container .about-sec-two .text{
+    background: var(--secoundary-color);
+    text-align: center;
+    padding: 28%;
+    height: 700px;
+}
+
+.about .container .about-sec-two .text h1{
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+}
+
+.about .container .about-sec-two .text button{
+    padding: 10px 50px;
+    margin-top: 20px;
+    color: var(--secoundary-color);
+    border: none;
+}
+
+.about .container .about-sec-two .text button:hover{
+    background-color: var(--secondary-optional-color);
+    color: var(--secoundary-color);
+    transition: 0.2s linear;
+    cursor: pointer;
+    color: white;
+}
+
+/* about responsive section */
+
+@media(max-width:1025px){
+    .about .container .about-sect-one{
+        grid-template-columns: repeat(auto-fill, minmax(51%,1fr));
+    }
+    .about .container .about-sect-one .about-text{
+        padding: 50px;
+    }
+}
+
+@media(max-width:426px){
+    .about .container .about-sect-one .about-text {
+        padding: 0
+    }
+    .about .container .about-sect-one .about-img {
+        flex-direction: column;
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+    }
+    .about .container .about-sect-one .about-img img {
+        width: 100%;
+        height: 400px;
+    }
+
+    .about .container .about-sect-one .about-img.active{
+        opacity: 1;
+    }
+
+    .about .container .about-sec-two {
+        grid-template-columns: repeat(auto-fill, minmax(51%,1fr));
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+    }
+
+    .about .container .about-sec-two.active{
+        opacity: 1;
+    }
+
+    .about .container .about-sec-two .image img {
+        height: 400px;
+    }
+    .about .container .about-sec-two .text {
+        padding: 0;
+        height: 400px;
+    }
+    .about .container .about-sec-two .text h1 {
+        margin-top: 20%;
+    }
+}
+
+/* end of about us section */
+
+/* request section  */
+
+.request .container .parallax-two{
+    background: url('/images/plnts.png') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.request .container .parallax-two .the-form{
+    background-color: white;
+    padding: 5% 10%;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 6px;
+}
+
+.request .container .parallax-two .the-form p{
+    margin-bottom: 30px;
+    color: var(--main-color);
+}
+
+.request .container .parallax-two .the-form form input{
+    margin-bottom: 10px;
+}
+
+.request .container .parallax-two .the-form form input:not(:last-child){
+    width: 100%;
+    height: 30px;
+}
+
+.request .container .parallax-two .the-form form input:last-child{
+    width: 100%;
+    height: 200px;
+}
+
+ form input:focus{
+    border: 3px solid black;
+}
+.request .container .parallax-two .the-form form input:hover{
+    border: 3px solid black;
+}
+
+.request .container .parallax-two .the-form button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+}
+.request .container .parallax-two .the-form button:hover{
+    background-color: var(--optional-color);
+    color: var(--main-color);
+    transition: 0.2s linear;
+    cursor: pointer;
+}
+/* end of request section */
+.footer .container{
+    background-color: var(--secoundary-color);
+    color: white;
+}
+.footer .container a{
+    color: white;
+    text-decoration: underline;
+}
+
+.footer .container p{
+    font-size: 20px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.footer .container .main-footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 100px;
+}
+
+.footer .container .main-footer .store{
+    text-align: center;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+
+.footer .container .main-footer .hours{
+    text-align: center;
+    max-width: 300px;
+    margin: 20px auto;
+}
+.footer .container .main-footer .help{
+    text-align: center;
+    max-width: 200px;
+    margin: 20px auto;
+}
+
+.footer .container .subscribe{
+    text-align: center;
+}
+
+.footer .container .subscribe input{
+    width: 300px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.footer .container .subscribe button{
+    border: none;
+    padding: 7px 30px;
+    color: var(--secondary-optional-color);
+}
+.footer .container .subscribe button:hover{
+    cursor: pointer;
+    background-color: var(--secondary-optional-color);
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.footer .container .media{
+display: flex;
+justify-content: center;
+padding: 20px;
+cursor: pointer;
+}
+
+.footer .container .media i{
+    padding: 0 10px;
+}
+
+@media(max-width: 426px){
+    .footer .container .main-footer{
+        padding: 60px;
+    }
+    .footer .container .subscribe input {
+        width: 250px;
+    }
+}
+/* footer section */
